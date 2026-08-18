@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>explicit coercion</title>
+    <script>
+console.clear()
+
+var mNum = 15
+console.log(typeof(String(mNum)))
+console.log(typeof(String(true)))
+console.log(typeof(String(-98.10)))
+console.log(typeof(String(null)))
+console.log(typeof(String(undefined)))
+
+// To Number
+console.log(typeof(Number('2')))
+console.log(Number(true), typeof(Number(true)))
+console.log(Number(false), typeof(Number(true)))
+console.log(Number('-90.234'), typeof(Number('-90.234')))
+console.log(Number('apple'), typeof(Number('apple')))
+
+//To Boolean
+console.log(Boolean(1), typeof(Boolean(1)))
+console.log(Boolean(0), typeof(Boolean(0)))
+console.log(Boolean('Apple'), typeof(Boolean('Apple')))
+console.log(Boolean(null), typeof(Boolean(null)))
+console.log(Boolean(undefined), typeof(Boolean(undefined)))
+console.log(Boolean(''), typeof(Boolean('')))
+
+// Answer the following questions WITHOUT executing the code in Codepen. Also, explain why do you think your answer is correct.
+// Q1. What will be printed in the console?
+// 1. String(123)
+// 2. String(-12.3)
+// 3. String(null)
+// 4. String(undefined)
+// 5. String(true)
+// 6. String(false)
+// Q2. What will be printed in the console?
+// 1. Boolean('')
+// 2. Boolean('Hello')
+// 3. Boolean(0)
+// 4. Boolean(200)
+// 5. Boolean(-0)
+// 6. Boolean(-200)
+// 7. Boolean(NaN)
+// 8. Boolean(null)
+// 9. Boolean(undefined)
+// 10. Boolean(false)
+// Q3. What will be printed in the console?
+// 1. Number(null)
+// 2. Number(undefined)
+// 3. Number(true)
+// 4. Number(false)
+// 5. Number(" 12 ")
+// 6. Number("-12.34")
+// 7. Number("\n")
+// 8. Number(" 12s ")
+// 9. Number(123)
+
+// Answer the following questions WITHOUT executing the code in Codepen. Also, explain why do you think your answer is correct.
+
+// Q1. What will be printed in the console?
+
+// 1. String(123)
+//    Answer: "123"
+//    Reason: String() converts the number 123 into a string.
+
+// 2. String(-12.3)
+//    Answer: "-12.3"
+//    Reason: String() converts the number -12.3 into a string.
+
+// 3. String(null)
+//    Answer: "null"
+//    Reason: String() explicitly converts null into the string "null".
+
+// 4. String(undefined)
+//    Answer: "undefined"
+//    Reason: String() explicitly converts undefined into the string "undefined".
+
+// 5. String(true)
+//    Answer: "true"
+//    Reason: String() converts the boolean value true into the string "true".
+
+// 6. String(false)
+//    Answer: "false"
+//    Reason: String() converts the boolean value false into the string "false".
+
+
+// Q2. What will be printed in the console?
+
+// 1. Boolean('')
+//    Answer: false
+//    Reason: An empty string is a falsy value.
+
+// 2. Boolean('Hello')
+//    Answer: true
+//    Reason: A non-empty string is a truthy value.
+
+// 3. Boolean(0)
+//    Answer: false
+//    Reason: The number 0 is a falsy value.
+
+// 4. Boolean(200)
+//    Answer: true
+//    Reason: Any non-zero number is truthy.
+
+// 5. Boolean(-0)
+//    Answer: false
+//    Reason: -0 is treated as 0 in JavaScript, and 0 is falsy.
+
+// 6. Boolean(-200)
+//    Answer: true
+//    Reason: Any non-zero number, including negative numbers, is truthy.
+
+// 7. Boolean(NaN)
+//    Answer: false
+//    Reason: NaN is a falsy value.
+
+// 8. Boolean(null)
+//    Answer: false
+//    Reason: null is a falsy value.
+
+// 9. Boolean(undefined)
+//    Answer: false
+//    Reason: undefined is a falsy value.
+
+// 10. Boolean(false)
+//     Answer: false
+//     Reason: false is itself a falsy boolean value.
+
+
+// Q3. What will be printed in the console?
+
+// 1. Number(null)
+//    Answer: 0
+//    Reason: When null is explicitly converted to a number, it becomes 0.
+
+// 2. Number(undefined)
+//    Answer: NaN
+//    Reason: undefined cannot be converted to a meaningful numeric value, so the result is NaN.
+
+// 3. Number(true)
+//    Answer: 1
+//    Reason: true is converted to the number 1.
+
+// 4. Number(false)
+//    Answer: 0
+//    Reason: false is converted to the number 0.
+
+// 5. Number(" 12 ")
+//    Answer: 12
+//    Reason: Number() ignores the leading and trailing whitespace and converts the remaining
+//    numeric string into the number 12.
+
+// 6. Number("-12.34")
+//    Answer: -12.34
+//    Reason: The string contains a valid negative decimal number, so Number() converts it to -12.34.
+
+// 7. Number("\n")
+//    Answer: 0
+//    Reason: A string containing only whitespace is converted to 0 by Number().
+//    \n represents a newline character, which is whitespace.
+
+// 8. Number(" 12s ")
+//    Answer: NaN
+//    Reason: The string contains the non-numeric character 's', so it is not a valid numeric
+//    representation. Therefore, Number() returns NaN.
+
+// 9. Number(123)
+//    Answer: 123
+//    Reason: 123 is already a number, so Number() returns the same value.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

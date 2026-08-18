@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objects</title>
+    <script>
+        console.clear()
+
+// var mCars = {
+// 	"p1" : "350 kmph",
+// 	"gallardo" : '320 kmph',
+// 	"veyron" : '409 kmph',
+// 	"agera" : '429 kmph'
+// }
+
+// console.log(mCars)
+// console.log(typeof(mCars))
+
+
+var mAgera = {
+	name: "Agera",
+	manufacturer: {
+		name: "Koenigsegg",
+		loaction: "Sweden"
+	},
+	topSpeed: 429,
+	color: "Black",
+	spoilers: false,
+	applyBrakes: function() {
+		setTimeout(function() {
+			console.log('Car Stopped');
+		}, 5000)
+	}
+}
+
+console.log(mAgera.name)
+console.log(mAgera.topSpeed)
+console.log(mAgera.manufacturer)
+console.log(mAgera.manufacturer.name)
+console.log(mAgera.applyBrakes())
+console.log(mAgera.applyBrakes)
+
+
+
+
+// Q1. We have an object of customers for our food delivery app with the information about their past orders with order values.
+// Write a JavaScript program to give a "Premium Membership" to the customer if the
+// customer has made at least 5 orders of the minimum value of 20.
+// The customers and their past order history is given below:
+// customers_data={
+// 'Ben10': [22, 30, 11, 17, 15, 52, 27, 12],
+// 'Sameer': [5, 17, 30, 33, 40, 22, 26, 10, 11, 45],
+// 'Zeeshan': [22, 30, 11, 5, 17, 30, 6, 57]
+// }
+
+
+// Q2. Write a JavaScript program to list the properties of a JavaScript object.
+// Sample Data
+// Input:
+// Object:
+// student = {
+// name: "David Rayy",
+// sclass: "VI",
+// rollno: 12
+// };
+// Output:
+// ["name", "sclass", "rollno"]
+
+// Q3. Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property
+// Sample Data
+// Input:
+// student = {
+// name : "David Rayy",
+// sclass : "VI",
+// rollno : 12
+// }
+// Output:
+// student = {
+// name : "David Rayy",
+// sclass : "VI"
+// }
+
+// Q4. Write a JavaScript program to get the length of a JavaScript object.
+// Sample Data
+// Input:
+// student = {
+// name : "David Rayy",
+// sclass : "VI",
+// rollno : 12
+// }
+// Output:
+// 3
+
+// Q5. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.
+// Sample Data
+// Input:
+// library = [
+// {
+// author: 'Bill Gates',
+// title: 'The Road Ahead',
+// readingStatus: true
+// },
+// {
+// author: 'Steve Jobs',
+// title: 'Walter Isaacson',
+// readingStatus: true
+// },
+// {
+// author: 'Suzanne Collins',
+// title: 'Mockingjay: The Final Book of The Hunger Games',
+// readingStatus: false
+// }];
+// Output:
+// For book with reading status 'true' we can print :
+// 'You have already read {book-name} by {author-name}.'
+// For book with reading status 'false' we can print:
+// 'You still need to read {book-name} by {author-name}.'
+
+
+// Q1. We have an object of customers for our food delivery app with the information about their past orders with order values.
+// Write a JavaScript program to give a "Premium Membership" to the customer if the
+// customer has made at least 5 orders of the minimum value of 20.
+// The customers and their past order history is given below:
+// customers_data = {
+// 'Ben10': [22, 30, 11, 17, 15, 52, 27, 12],
+// 'Sameer': [5, 17, 30, 33, 40, 22, 26, 10, 11, 45],
+// 'Zeeshan': [22, 30, 11, 5, 17, 30, 6, 57]
+// }
+
+// Answer:
+
+var customers_data = {
+    'Ben10': [22, 30, 11, 17, 15, 52, 27, 12],
+    'Sameer': [5, 17, 30, 33, 40, 22, 26, 10, 11, 45],
+    'Zeeshan': [22, 30, 11, 5, 17, 30, 6, 57]
+};
+
+for (var customer in customers_data) {
+    var orders = customers_data[customer];
+    var validOrders = orders.filter(function(order) {
+        return order >= 20;
+    });
+
+    if (validOrders.length >= 5) {
+        console.log(customer + " gets Premium Membership.");
+    } else {
+        console.log(customer + " does not get Premium Membership.");
+    }
+}
+
+// Output:
+// Ben10 does not get Premium Membership.
+// Sameer gets Premium Membership.
+// Zeeshan does not get Premium Membership.
+//
+// Reason:
+// An order is considered eligible if its value is at least 20.
+// Ben10 has 4 eligible orders: 22, 30, 52, 27.
+// Sameer has 6 eligible orders: 30, 33, 40, 22, 26, 45.
+// Zeeshan has 4 eligible orders: 22, 30, 30, 57.
+// Therefore, only Sameer has at least 5 eligible orders.
+
+
+// Q2. Write a JavaScript program to list the properties of a JavaScript object.
+// Sample Data
+// Input:
+// Object:
+// student = {
+// name: "David Rayy",
+// sclass: "VI",
+// rollno: 12
+// };
+// Output:
+// ["name", "sclass", "rollno"]
+
+// Answer:
+
+var student = {
+    name: "David Rayy",
+    sclass: "VI",
+    rollno: 12
+};
+
+var properties = Object.keys(student);
+
+console.log(properties);
+
+// Output:
+// ["name", "sclass", "rollno"]
+//
+// Reason:
+// Object.keys() returns an array containing all the property names of an object.
+
+
+// Q3. Write a JavaScript program to delete the rollno property from the following object.
+// Also print the object before or after deleting the property.
+// Sample Data
+// Input:
+// student = {
+// name : "David Rayy",
+// sclass : "VI",
+// rollno : 12
+// }
+// Output:
+// student = {
+// name : "David Rayy",
+// sclass : "VI"
+// }
+
+// Answer:
+
+var student = {
+    name: "David Rayy",
+    sclass: "VI",
+    rollno: 12
+};
+
+console.log("Before deleting:", student);
+
+delete student.rollno;
+
+console.log("After deleting:", student);
+
+// Output:
+// Before deleting: { name: "David Rayy", sclass: "VI", rollno: 12 }
+// After deleting: { name: "David Rayy", sclass: "VI" }
+//
+// Reason:
+// The delete operator removes a property from an object.
+// Therefore, delete student.rollno removes the rollno property.
+
+
+// Q4. Write a JavaScript program to get the length of a JavaScript object.
+// Sample Data
+// Input:
+// student = {
+// name : "David Rayy",
+// sclass : "VI",
+// rollno : 12
+// }
+// Output:
+// 3
+
+// Answer:
+
+var student = {
+    name: "David Rayy",
+    sclass: "VI",
+    rollno: 12
+};
+
+var objectLength = Object.keys(student).length;
+
+console.log(objectLength);
+
+// Output:
+// 3
+//
+// Reason:
+// Object.keys(student) returns ["name", "sclass", "rollno"].
+// The length property of this array is 3.
+
+
+// Q5. Write a JavaScript program to display the reading status
+// (i.e. display book name, author name and reading status) of the following books.
+// Sample Data:
+// Input:
+// library = [
+// {
+// author: 'Bill Gates',
+// title: 'The Road Ahead',
+// readingStatus: true
+// },
+// {
+// author: 'Steve Jobs',
+// title: 'Walter Isaacson',
+// readingStatus: true
+// },
+// {
+// author: 'Suzanne Collins',
+// title: 'Mockingjay: The Final Book of The Hunger Games',
+// readingStatus: false
+// }];
+//
+// Output:
+// For book with reading status 'true' we can print:
+// 'You have already read {book-name} by {author-name}.'
+// For book with reading status 'false' we can print:
+// 'You still need to read {book-name} by {author-name}.'
+
+// Answer:
+
+var library = [
+    {
+        author: 'Bill Gates',
+        title: 'The Road Ahead',
+        readingStatus: true
+    },
+    {
+        author: 'Steve Jobs',
+        title: 'Walter Isaacson',
+        readingStatus: true
+    },
+    {
+        author: 'Suzanne Collins',
+        title: 'Mockingjay: The Final Book of The Hunger Games',
+        readingStatus: false
+    }
+];
+
+for (var i = 0; i < library.length; i++) {
+    var book = library[i];
+
+    if (book.readingStatus === true) {
+        console.log("You have already read " + book.title + " by " + book.author + ".");
+    } else {
+        console.log("You still need to read " + book.title + " by " + book.author + ".");
+    }
+}
+
+// Output:
+// You have already read The Road Ahead by Bill Gates.
+// You have already read Walter Isaacson by Steve Jobs.
+// You still need to read Mockingjay: The Final Book of The Hunger Games by Suzanne Collins.
+//
+// Reason:
+// The for loop goes through each book in the library.
+// The readingStatus property is checked using an if-else statement.
+// If it is true, the program prints that the book has already been read.
+// If it is false, the program prints that the book still needs to be read.
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

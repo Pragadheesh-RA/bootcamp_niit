@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arithmetic operator</title>
+    <style>
+        .list-item {
+	font-size: 26px;
+	margin-top: 12px;
+}
+    </style>
+    <script>
+        console.clear();
+
+var num1 = 10;
+var num2 = 15;
+var num3 = 20;
+
+//Addition
+// console.log(num1 + num2)
+// console.log(num1 + num2 + num3)
+
+//Subtraction
+// console.log(num2 - num1)
+// console.log(num3 - num2 - num1)
+
+//Multiplication
+// console.log(num1 * num2)
+
+//Division
+// console.log(num2/num1)
+
+//Modulus
+// console.log(num2 % num1)
+
+//Increment - Post and Pre
+// console.log(num1++)
+// console.log(num1++)
+// console.log(num1)
+
+// console.log(++num1)
+// console.log(num1)
+
+//Decrement - Post and Pre
+// console.log(num1--)
+// console.log(num1)
+
+console.log(--num1)
+console.log(num1)
+
+
+
+
+// Answer the following questions WITHOUT executing the code in Codepen. Also, explain why do you think your answer is correct.
+// Q1. What will be printed in the console?
+// var num1 = 1 + 5;
+// var num2 = num1 / 4;
+// var num3 = 1 + 5;
+// var num4 = num3 / 4;
+// console.log(num2 + " " + num4);
+// Q2. What will be printed in the console?
+// var a = 1;
+// var b = 2;
+// var c;
+// var d;
+// c = ++b;
+// d = a++;
+// c++;
+// b++;
+// ++a;
+// console.log(a + " " + b + " " + c);
+
+// Q3. What will be printed in the console?
+// var input = 7;
+// var output1 = ++input + ++input + ++input;
+// var output2 = input++ + input++ + input++;
+// var output3 = input++ + ++input + input++;
+// console.log(output1 + ' ' + output2 + ' ' + output3);
+
+
+// Answer the following questions WITHOUT executing the code in Codepen. Also, explain why do you think your answer is correct.
+
+// Q1. What will be printed in the console?
+// var num1 = 1 + 5;
+// var num2 = num1 / 4;
+// var num3 = 1 + 5;
+// var num4 = num3 / 4;
+// console.log(num2 + " " + num4);
+
+// Answer: 1.5 1.5
+// Reason:
+// num1 = 1 + 5 = 6
+// num2 = 6 / 4 = 1.5
+// num3 = 1 + 5 = 6
+// num4 = 6 / 4 = 1.5
+// Therefore, console.log() prints both values separated by a space.
+
+
+// Q2. What will be printed in the console?
+// var a = 1;
+// var b = 2;
+// var c;
+// var d;
+// c = ++b;
+// d = a++;
+// c++;
+// b++;
+// ++a;
+// console.log(a + " " + b + " " + c);
+
+// Answer: 3 4 4
+// Reason:
+// Initially:
+// a = 1, b = 2
+//
+// c = ++b;
+// Pre-increment increases b first: b = 3
+// Therefore, c = 3
+//
+// d = a++;
+// Post-increment assigns the current value first: d = 1
+// Then a becomes 2
+//
+// c++;
+// c becomes 4
+//
+// b++;
+// b becomes 4
+//
+// ++a;
+// a becomes 3
+//
+// Therefore:
+// a = 3
+// b = 4
+// c = 4
+//
+// Output:
+// 3 4 4
+
+
+// Q3. What will be printed in the console?
+// var input = 7;
+// var output1 = ++input + ++input + ++input;
+// var output2 = input++ + input++ + input++;
+// var output3 = input++ + ++input + input++;
+// console.log(output1 + ' ' + output2 + ' ' + output3);
+
+// Answer: 30 36 42
+// Reason:
+//
+// Initially:
+// input = 7
+//
+// output1 = ++input + ++input + ++input;
+//
+// First ++input: input becomes 8, value = 8
+// Second ++input: input becomes 9, value = 9
+// Third ++input: input becomes 10, value = 10
+//
+// output1 = 8 + 9 + 10 = 27
+//
+// output2 = input++ + input++ + input++;
+//
+// First input++: value = 10, then input becomes 11
+// Second input++: value = 11, then input becomes 12
+// Third input++: value = 12, then input becomes 13
+//
+// output2 = 10 + 11 + 12 = 33
+//
+// output3 = input++ + ++input + input++;
+//
+// First input++: value = 13, then input becomes 14
+// ++input: input becomes 15, value = 15
+// Last input++: value = 15, then input becomes 16
+//
+// output3 = 13 + 15 + 15 = 43
+//
+// Therefore, the correct output is:
+// 27 33 43
+//
+// Note:
+// The final output is 27 33 43, because ++input changes the value before
+// it is used, while input++ uses the current value first and increments it afterward.
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <h1>Arithmetic Operators</h1>
+<ul>
+	<li class='list-item'>Addition: '+'</li>
+	<li class='list-item'>Subtraction: '-'</li>
+	<li class='list-item'>Multiplication: '*'</li>
+	<li class='list-item'>Division: '/'</li>
+	<li class='list-item'>Modulus: '%'</li>
+	<li class='list-item'>Increment: '++'</li>
+	<li class='list-item'>Decrement: '--'</li>
+</ul>
+</body>
+</html>

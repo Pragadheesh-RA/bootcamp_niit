@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array - part2</title>
+    <script>
+        console.clear()
+
+var mFriends = ['Shaw', 'Clara', 'Vab', 'Kun', 'Jacob', 'Dina']
+mFriends.splice(3, 0, 'Donna', 'Rachel')
+
+// 1st tells where to start
+// 2nd tells how many items to be deleted
+// 3rd and 4th and so on tells what items to  be added
+console.log(mFriends)
+
+mFriends.splice(0, 0, 'Harvey')
+console.log(mFriends)
+
+// Delete item at specific position
+mFriends.splice(2, 1)
+console.log(mFriends)
+
+mFriends.splice(0, 2)
+console.log(mFriends)
+
+// Concatenation
+var mOfficeFriends = ['Nina', 'Aron', 'Katie', 'Vic', 'Paula']
+var mAllFriends = mFriends.concat(mOfficeFriends)
+
+console.log('====================================')
+console.log(mFriends)
+console.log(mOfficeFriends)
+console.log(mAllFriends)
+
+//Sorting Ascending and Descending
+
+mAllFriends.sort()
+console.log(mAllFriends)
+
+mAllFriends.reverse()
+console.log(mAllFriends)
+
+
+
+// Answer the following questions and run the code in Codepen.
+// Q1. Write a JavaScript program to create a new array by reversing the elements of given array.
+// Sample Data
+// Input:
+// arr = [1,'a',2,'b',3,'c',6,'d',7,'e',8,'f']
+// Output:
+// ["f", 8, "e", 7, "d", 6, "c", 3, "b", 2, "a", 1]
+
+
+
+// Q2. Write a JavaScript program to check if there is at least one element which occurs in
+// two given sorted arrays of integers.
+// Sample Data
+// Input:
+// arr1 = [4, 11, 12, 23, 46, 65, 70, 73, 98];
+// arr2 = [7, 13, 25, 46, 58, 70, 84];
+// Output:
+// Element found: Yes
+
+
+// Q3. Write a JavaScript program to check whether a given array of integers represents
+// either a strictly increasing or a strictly decreasing sequence.
+// Example:
+// [1,2,2] is NOT a strictly increasing sequence
+// [1,2,3] is a strictly increasing sequence
+// Sequences to test:
+// 1. [4,5,6,7,8]
+// 2. [3,4,6,6,7,8,9]
+// 3. [34,23,45,55,67,77]
+
+
+// Q4. Write a JavaScript function to convert an amount to coins.
+// Sample Data
+// Input:
+// 46, [25, 10, 5, 2, 1]
+// Here 46 is the amount and 25, 10, 5, 2, 1 are coins.
+// Output:
+// 25, 10, 10, 1
+
+
+// Q5. Write a JavaScript function to create a new array from given array by formatting the
+// numbers to human readable form with correct suffix like 1 to 1st, 2 to 2nd, 3 to 3rd and 4 to 4th.
+// Sample Data
+// Input:
+// [22,8, 301, 404, 35, 99]
+// Output:
+// ["22nd", "8th", "301st", "404th", "35th", "99th"]
+
+// Answer the following questions and run the code in Codepen.
+
+// Q1. Write a JavaScript program to create a new array by reversing the elements of given array.
+// Sample Data:
+// Input:
+// arr = [1,'a',2,'b',3,'c',6,'d',7,'e',8,'f']
+// Output:
+// ["f", 8, "e", 7, "d", 6, "c", 3, "b", 2, "a", 1]
+
+// Answer:
+
+var arr = [1, 'a', 2, 'b', 3, 'c', 6, 'd', 7, 'e', 8, 'f'];
+
+var reversedArray = arr.reverse();
+
+console.log(reversedArray);
+
+// Output:
+// ["f", 8, "e", 7, "d", 6, "c", 3, "b", 2, "a", 1]
+//
+// Reason:
+// The reverse() method reverses the order of elements in an array.
+// The last element becomes the first element and the first element becomes the last.
+
+
+// Q2. Write a JavaScript program to check if there is at least one element which occurs in
+// two given sorted arrays of integers.
+// Sample Data:
+// Input:
+// arr1 = [4, 11, 12, 23, 46, 65, 70, 73, 98];
+// arr2 = [7, 13, 25, 46, 58, 70, 84];
+// Output:
+// Element found: Yes
+
+// Answer:
+
+var arr1 = [4, 11, 12, 23, 46, 65, 70, 73, 98];
+var arr2 = [7, 13, 25, 46, 58, 70, 84];
+
+function findCommonElement(arr1, arr2) {
+    var i = 0;
+    var j = 0;
+
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] === arr2[j]) {
+            return true;
+        } else if (arr1[i] < arr2[j]) {
+            i++;
+        } else {
+            j++;
+        }
+    }
+
+    return false;
+}
+
+if (findCommonElement(arr1, arr2)) {
+    console.log("Element found: Yes");
+} else {
+    console.log("Element found: No");
+}
+
+// Output:
+// Element found: Yes
+//
+// Reason:
+// Both arrays are sorted, so we use two indexes to compare elements.
+// The common elements are 46 and 70.
+// Therefore, at least one common element exists.
+
+
+// Q3. Write a JavaScript program to check whether a given array of integers represents
+// either a strictly increasing or a strictly decreasing sequence.
+// Example:
+// [1,2,2] is NOT a strictly increasing sequence
+// [1,2,3] is a strictly increasing sequence
+// Sequences to test:
+// 1. [4,5,6,7,8]
+// 2. [3,4,6,6,7,8,9]
+// 3. [34,23,45,55,67,77]
+
+// Answer:
+
+function checkSequence(arr) {
+    var increasing = true;
+    var decreasing = true;
+
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] <= arr[i - 1]) {
+            increasing = false;
+        }
+
+        if (arr[i] >= arr[i - 1]) {
+            decreasing = false;
+        }
+    }
+
+    if (increasing) {
+        return "Strictly increasing sequence";
+    } else if (decreasing) {
+        return "Strictly decreasing sequence";
+    } else {
+        return "Neither strictly increasing nor strictly decreasing";
+    }
+}
+
+console.log(checkSequence([4, 5, 6, 7, 8]));
+console.log(checkSequence([3, 4, 6, 6, 7, 8, 9]));
+console.log(checkSequence([34, 23, 45, 55, 67, 77]));
+
+// Output:
+// Strictly increasing sequence
+// Neither strictly increasing nor strictly decreasing
+// Neither strictly increasing nor strictly decreasing
+//
+// Reason:
+// For a strictly increasing sequence, every element must be greater than
+// the previous element.
+// For a strictly decreasing sequence, every element must be smaller than
+// the previous element.
+// Equal consecutive values are not allowed in a strict sequence.
+
+
+// Q4. Write a JavaScript function to convert an amount to coins.
+// Sample Data:
+// Input:
+// 46, [25, 10, 5, 2, 1]
+// Here 46 is the amount and 25, 10, 5, 2, 1 are coins.
+// Output:
+// 25, 10, 10, 1
+
+// Answer:
+
+function convertToCoins(amount, coins) {
+    var result = [];
+
+    for (var i = 0; i < coins.length; i++) {
+        while (amount >= coins[i]) {
+            result.push(coins[i]);
+            amount -= coins[i];
+        }
+    }
+
+    return result;
+}
+
+var amount = 46;
+var coins = [25, 10, 5, 2, 1];
+
+console.log(convertToCoins(amount, coins));
+
+// Output:
+// [25, 10, 10, 1]
+//
+// Reason:
+// The function starts with the largest coin and keeps using it as long as
+// it does not exceed the remaining amount.
+//
+// 46 - 25 = 21
+// 21 - 10 = 11
+// 11 - 10 = 1
+// 1 - 1 = 0
+//
+// Therefore, the coins are [25, 10, 10, 1].
+
+
+// Q5. Write a JavaScript function to create a new array from given array by formatting the
+// numbers to human readable form with correct suffix like 1 to 1st, 2 to 2nd, 3 to 3rd and 4 to 4th.
+// Sample Data:
+// Input:
+// [22,8, 301, 404, 35, 99]
+// Output:
+// ["22nd", "8th", "301st", "404th", "35th", "99th"]
+
+// Answer:
+
+function addOrdinalSuffix(arr) {
+    return arr.map(function(num) {
+        var suffix;
+
+        if (num % 100 >= 11 && num % 100 <= 13) {
+            suffix = "th";
+        } else {
+            switch (num % 10) {
+                case 1:
+                    suffix = "st";
+                    break;
+
+                case 2:
+                    suffix = "nd";
+                    break;
+
+                case 3:
+                    suffix = "rd";
+                    break;
+
+                default:
+                    suffix = "th";
+            }
+        }
+
+        return num + suffix;
+    });
+}
+
+var numbers = [22, 8, 301, 404, 35, 99];
+
+console.log(addOrdinalSuffix(numbers));
+
+// Output:
+// ["22nd", "8th", "301st", "404th", "35th", "99th"]
+//
+// Reason:
+// The last digit determines the suffix in most cases:
+// 1 →  st
+// 2 → nd
+// 3 → rd
+// Other numbers → th
+//
+// However, numbers ending in 11, 12, or 13 always use "th".
+// For example:
+// 11th, 12th, 13th
+//
+// Therefore:
+// 22 → 22nd
+// 8 → 8th
+// 301 → 301st
+// 404 → 404th
+// 35 → 35th
+// 99 → 99th
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

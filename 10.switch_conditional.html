@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch - conditional </title>
+    <script>
+        console.clear()
+
+var currentDay = 'Thu'
+
+if(currentDay === 'Mon') {
+	console.log('Timings: 10:00-06:00')
+} else if(currentDay === 'Tue') {
+	console.log('Timings: 09:00-05:00')
+} else if(currentDay === 'Wed') {
+	console.log('Timings: 09:30-05:30')
+} else if(currentDay === 'Thu') {
+	console.log('Timings: 10:15-06:15')
+} else if(currentDay === 'Fri') {
+	console.log('Timings: 09:05-05:05')
+} else if(currentDay === 'Sat') {
+	console.log('Timings: 09:00-05:00')
+} else if(currentDay === 'Sun') {
+	console.log('Timings: 09:00-01:00')
+}
+
+switch(currentDay) {
+	case 'Mon':
+	  console.log('Timings: 10:00-06:00')
+	  break;
+	case 'Tue':
+	  console.log('Timings: 09:00-05:00')
+		break;
+	case 'Wed':
+	console.log('Timings: 09:30-05:30')
+		break;
+	case 'Thu':
+	console.log('Timings: 10:15-06:15')
+		break;
+	case 'Fri':
+	console.log('Timings: 09:05-05:05')
+		break;
+	case 'Sat':
+	console.log('Timings: 09:00-05:00')
+		break;
+	case 'Sun':
+	console.log('Timings: 09:00-01:00')
+		break;
+	default:
+	console.log('Timings: 09:00-01:00')
+}
+
+
+
+
+
+
+// Answer the following questions and run the code in Codepen.
+// Q1. Write a program to print the number of days in a month using a switch case. Change the value of monthNumber and check if your code works fine.
+// var monthNumber = 3;
+// Example:
+// monthNumber = 3
+// Output:
+// Month = March
+// Total number of days = 31
+
+// Q2. Write a program to check vowel or consonant using switch case. Change the value
+// of enteredAlphabet and check if your code works fine.
+// var enteredAlphabet = 'd'
+// Example:
+// enteredAlphabet: c
+// Output: 'c' is consonant
+// Q3. Write a program to check even or odd number using switch case. Change the value
+// of enteredNumber and check if your code works fine.
+// var enteredNumber = 41
+// Example:
+// enteredNumber: 41
+// Output: 41 is an odd number
+
+// Answer the following questions and run the code in Codepen.
+// Q1. Write a program to print the number of days in a month using a switch case.
+// Change the value of monthNumber and check if your code works fine.
+// var monthNumber = 3;
+// Example:
+// monthNumber = 3
+// Output:
+// Month = March
+// Total number of days = 31
+
+var monthNumber = 3;
+
+switch (monthNumber) {
+    case 1:
+        console.log("Month = January");
+        console.log("Total number of days = 31");
+        break;
+
+    case 2:
+        console.log("Month = February");
+        console.log("Total number of days = 28");
+        break;
+
+    case 3:
+        console.log("Month = March");
+        console.log("Total number of days = 31");
+        break;
+
+    case 4:
+        console.log("Month = April");
+        console.log("Total number of days = 30");
+        break;
+
+    case 5:
+        console.log("Month = May");
+        console.log("Total number of days = 31");
+        break;
+
+    case 6:
+        console.log("Month = June");
+        console.log("Total number of days = 30");
+        break;
+
+    case 7:
+        console.log("Month = July");
+        console.log("Total number of days = 31");
+        break;
+
+    case 8:
+        console.log("Month = August");
+        console.log("Total number of days = 31");
+        break;
+
+    case 9:
+        console.log("Month = September");
+        console.log("Total number of days = 30");
+        break;
+
+    case 10:
+        console.log("Month = October");
+        console.log("Total number of days = 31");
+        break;
+
+    case 11:
+        console.log("Month = November");
+        console.log("Total number of days = 30");
+        break;
+
+    case 12:
+        console.log("Month = December");
+        console.log("Total number of days = 31");
+        break;
+
+    default:
+        console.log("Invalid month number");
+}
+
+// Output:
+// Month = March
+// Total number of days = 31
+//
+// Reason:
+// The switch statement compares monthNumber with each case.
+// When monthNumber is 3, case 3 is executed and March has 31 days.
+
+
+// Q2. Write a program to check vowel or consonant using switch case.
+// Change the value of enteredAlphabet and check if your code works fine.
+// var enteredAlphabet = 'd'
+// Example:
+// enteredAlphabet: c
+// Output: 'c' is consonant
+
+var enteredAlphabet = 'd';
+
+switch (enteredAlphabet.toLowerCase()) {
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+        console.log("'" + enteredAlphabet + "' is a vowel");
+        break;
+
+    default:
+        console.log("'" + enteredAlphabet + "' is consonant");
+}
+
+// Output:
+// 'd' is consonant
+//
+// Reason:
+// The switch checks whether the entered alphabet matches any of the five vowels.
+// If it matches a, e, i, o, or u, it is a vowel. Otherwise, it is considered a consonant.
+
+
+// Q3. Write a program to check even or odd number using switch case.
+// Change the value of enteredNumber and check if your code works fine.
+// var enteredNumber = 41
+// Example:
+// enteredNumber: 41
+// Output: 41 is an odd number
+
+var enteredNumber = 41;
+
+switch (enteredNumber % 2) {
+    case 0:
+        console.log(enteredNumber + " is an even number");
+        break;
+
+    case 1:
+    case -1:
+        console.log(enteredNumber + " is an odd number");
+        break;
+
+    default:
+        console.log("Invalid number");
+}
+
+// Output:
+// 41 is an odd number
+//
+// Reason:
+// The modulus (%) operator gives the remainder after division by 2.
+// If the remainder is 0, the number is even.
+// If the remainder is 1 or -1, the number is odd.
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

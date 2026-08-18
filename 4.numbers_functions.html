@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numbers inbuilt function </title>
+    <script>
+
+
+console.clear()
+var num1 = 10;
+var num2 = 20.3;
+
+// toString() number as input and returns a string
+console.log(num1.toString())
+console.log(num2.toString())
+
+var strNum1 = "10";
+var strNum2 = "11.5";
+var strNum3 = "ABC";
+var strName = "18years";
+var strName3 = "18.5years";
+
+console.log(parseInt(strName));
+console.log(parseFloat(strName3));
+// parseInt() string numeral as input and returns a number
+console.log(parseInt(strNum1));
+console.log(parseInt(strNum2));
+console.log(parseInt(strNum3));
+
+// parseFloat() string numeral as an input and returns a foating
+console.log(parseFloat(strNum2))
+console.log(parseFloat(strNum3))
+
+// toFixed() takes floating number and rounds it off to given position
+
+var strFloat = 87.987653;
+console.log(strFloat.toFixed())
+console.log(strFloat.toFixed(2))
+console.log(strFloat.toFixed(5))
+console.log(strFloat.toFixed(10))
+
+
+// Q. Answer the following questions. Also, explain why do you think that your answer is correct.
+// 1. console.log(toString(100))
+
+
+// 2. console.log(parseInt('44'))
+// 3. console.log(parseInt('22.222'))
+// 4. console.log(parseInt('Banana'))
+// 5. console.log(parseFloat(12))
+// 6. console.log(parseFloat(13.3))
+// 7. var num1 = 10; console.log(num1.toFixed(2))
+// 8. var num1 = 15.456789; console.log(num1.toFixed())
+// 9. var num1 = 15.456789; console.log(number.toFixed(2))
+// 10. var num1 = 15.456789; console.log(num1.toFixed(3))
+
+// Q. Answer the following questions. Also, explain why do you think that your answer is correct.
+
+// 1. console.log(toString(100))
+//    Answer: ReferenceError: toString is not defined
+//    Reason: toString() is not a standalone global function in JavaScript.
+//    It is a method available on objects. To convert 100 to a string, use String(100) or (100).toString().
+
+
+// 2. console.log(parseInt('44'))
+//    Answer: 44
+//    Reason: parseInt() converts a string into an integer. '44' is a valid integer, so the result is 44.
+
+// 3. console.log(parseInt('22.222'))
+//    Answer: 22
+//    Reason: parseInt() reads the integer part of the string and stops when it encounters the decimal point.
+
+// 4. console.log(parseInt('Banana'))
+//    Answer: NaN
+//    Reason: 'Banana' does not start with a valid numeric value, so parseInt() cannot convert it into an integer.
+
+// 5. console.log(parseFloat(12))
+//    Answer: 12
+//    Reason: parseFloat() converts the value into a floating-point number. 12 is already a valid number,
+//    so the result is 12.
+
+// 6. console.log(parseFloat(13.3))
+//    Answer: 13.3
+//    Reason: 13.3 is already a valid floating-point number, so parseFloat() returns 13.3.
+
+// 7. var num1 = 10; console.log(num1.toFixed(2))
+//    Answer: "10.00"
+//    Reason: toFixed(2) formats the number with exactly 2 digits after the decimal point.
+
+// 8. var num1 = 15.456789; console.log(num1.toFixed())
+//    Answer: "15"
+//    Reason: If no argument is provided, toFixed() uses 0 decimal places.
+//    Therefore, 15.456789 is rounded to 15.
+
+// 9. var num1 = 15.456789; console.log(number.toFixed(2))
+//    Answer: ReferenceError: number is not defined
+//    Reason: The variable declared is num1, but the code tries to access number.
+//    Since number has not been declared, JavaScript throws a ReferenceError.
+
+// 10. var num1 = 15.456789; console.log(num1.toFixed(3))
+//     Answer: "15.457"
+//     Reason: toFixed(3) keeps exactly 3 digits after the decimal point.
+//     15.456789 is rounded to 15.457.
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

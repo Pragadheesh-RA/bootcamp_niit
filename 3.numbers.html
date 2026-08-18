@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numbers - JS</title>
+    <script>
+
+console.clear()
+
+var num1 = 10 // Integer
+var num2 = 10.9 // Decimal Number
+
+console.log(typeof(num1))
+console.log(typeof(num2))
+
+//Addition
+var num3 = 15;
+var sum = num3 + num1 + num2;
+console.log(sum);
+
+//Substraction
+var diff = num3 - num1;
+console.log(diff);
+
+//Multiplication
+var mul = num3 * num1;
+console.log(mul);
+
+// Division
+var div = num3 / num1;
+console.log(div);
+
+var divByZero = num3 / 0;
+console.log(divByZero);
+console.log(typeof(divByZero));
+
+var mulByString = num3 * 'A';
+console.log(mulByString);
+console.log(typeof(mulByString));
+
+
+// Q. Answer the following questions. Also, explain why do you think that your answer is correct.
+// 1. console.log(0 / 0)
+// 2. console.log(0 / 5)
+// 3. console.log(3 * 'a')
+// 4. console.log('a' * 3)
+// 5. console.log('b' + 4)
+// 6. console.log(4 + 'b')
+// 7. console.log(5 - 'c')
+// 8. console.log('c' - 5)
+
+// Q. Answer the following questions. Also, explain why do you think that your answer is correct.
+
+// 1. console.log(0 / 0)
+//    Answer: NaN
+//    Reason: 0 divided by 0 is undefined mathematically, so JavaScript returns NaN (Not a Number).
+
+// 2. console.log(0 / 5)
+//    Answer: 0
+//    Reason: 0 divided by any non-zero number is 0.
+
+// 3. console.log(3 * 'a')
+//    Answer: NaN
+//    Reason: The '*' operator performs numeric multiplication. JavaScript tries to convert 'a' to a number,
+//    but 'a' cannot be converted to a valid number, so the result is NaN.
+
+// 4. console.log('a' * 3)
+//    Answer: NaN
+//    Reason: The '*' operator performs numeric multiplication. JavaScript tries to convert 'a' to a number,
+//    but the conversion fails, so the result is NaN.
+
+// 5. console.log('b' + 4)
+//    Answer: 'b4'
+//    Reason: The '+' operator performs string concatenation when one operand is a string.
+//    Therefore, 4 is converted to a string and concatenated with 'b'.
+
+// 6. console.log(4 + 'b')
+//    Answer: '4b'
+//    Reason: Since one operand is a string, '+' performs string concatenation.
+//    Therefore, 4 is converted to a string and combined with 'b'.
+
+// 7. console.log(5 - 'c')
+//    Answer: NaN
+//    Reason: The '-' operator performs numeric subtraction. JavaScript tries to convert 'c' to a number,
+//    but 'c' cannot be converted to a valid number, so the result is NaN.
+
+// 8. console.log('c' - 5)
+//    Answer: NaN
+//    Reason: The '-' operator performs numeric subtraction. JavaScript tries to convert 'c' to a number,
+//    but the conversion fails, so the result is NaN.
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

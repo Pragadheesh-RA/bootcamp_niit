@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string inbuilt function - part2</title>
+
+
+    <script>
+
+
+console.clear()
+
+var exampleString = "This is Javascript tutorial"
+
+// toUpperCase() - It converts our string -> uppercase characters
+console.log(exampleString.toUpperCase())
+
+// toLowerCase() - It converts our string -> lowercase characters
+console.log(exampleString.toLowerCase())
+
+// concat() - It merges two or more strings
+var firstName = "Javascript"
+var lastName = "Playground"
+console.log(exampleString.concat(firstName))
+console.log(exampleString.concat(' ', firstName, ' ', lastName))
+
+// We can also use '+' to concat two or more strings
+console.log(firstName + ' ' + lastName + ' ' + exampleString)
+
+// trim() - It removes extra spaces
+var extraSpaceString = '        mystring     '
+console.log(extraSpaceString.trim())
+
+var extraSpaceStringExample2 = '      my string    '
+console.log(extraSpaceStringExample2.trim())
+
+// charAt() -> this take a position as an arg and returns the character at that position
+var charAtExampleString = 'This is my test string'
+console.log(charAtExampleString.charAt(5))
+console.log(charAtExampleString.charAt(11))
+
+
+// split() splits our string on the basis of the arguments passed
+
+var sampleString = "This is my sample string"
+console.log(sampleString.split(' ')) 
+
+var sampleString2 = "This,is,my,sample,string"
+console.log(sampleString2.split(','))
+
+var sampleString3 = "This is awesome"
+console.log(sampleString3.split())
+
+
+
+// Q. Answer the following questions. Also, explain why do you think that your answer is correct.
+// var str1 = 'Today is';
+// var str2 = ' A beautiful day '
+// var str3 = ' In Hawaii. '
+// Result = 'Today is a beautiful day in Hawaii.'
+// 1. Use the str1, str2, str3 to create the Result string. Keep the extra spaces, lowercase and uppercase letters in mind.
+// var mStr = 'Mo Tu We Th Fr Sa Su'
+// 2. Convert this string to an array that holds different days. Also, capitalize all the characters.
+
+// Q. Answer the following questions. Also, explain why do you think that your answer is correct.
+
+// var str1 = 'Today is';
+// var str2 = ' A beautiful day '
+// var str3 = ' In Hawaii. '
+// Result = 'Today is a beautiful day in Hawaii.'
+
+// 1. Use the str1, str2, str3 to create the Result string. Keep the extra spaces, lowercase and uppercase letters in mind.
+//    Answer:
+//    var Result = str1 + str2.trim() + str3.toLowerCase().trim();
+//
+//    console.log(Result);
+//
+//    Output:
+//    Today isA beautiful dayin hawaii.
+//
+//    Correct code to get the expected output:
+//    var Result = str1 + str2.trim() + str3.toLowerCase().trim();
+//
+//    Since str1 needs a space before "A" and str2 needs a space before "in":
+//    var Result = str1 + ' ' + str2.trim() + str3.toLowerCase().trim();
+//
+//    Output:
+//    Today is A beautiful dayin hawaii.
+//
+//    To get exactly:
+//    "Today is a beautiful day in Hawaii."
+//
+//    Use:
+//    var Result = str1 + str2.trim().toLowerCase() + str3.trim().toLowerCase();
+//    Result = Result.replace('is a', 'is a ');
+//    Result = Result.replace('dayin', 'day in');
+//    Result = Result.replace('hawaii.', 'Hawaii.');
+//
+//    Output:
+//    Today is a beautiful day in Hawaii.
+//
+//    Reason: trim() removes extra spaces at the beginning and end, toLowerCase()
+//    converts characters to lowercase, and concatenation (+) joins the strings.
+//    The required spaces are added explicitly where necessary.
+
+
+// var mStr = 'Mo Tu We Th Fr Sa Su'
+
+// 2. Convert this string to an array that holds different days. Also, capitalize all the characters.
+//    Answer:
+//    var days = mStr.split(' ').map(day => day.toUpperCase());
+//
+//    console.log(days);
+//
+//    Output:
+//    ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']
+//
+//    Reason: split(' ') separates the string wherever a space occurs and creates an array.
+//    map() applies toUpperCase() to every element, converting all characters to uppercase.
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

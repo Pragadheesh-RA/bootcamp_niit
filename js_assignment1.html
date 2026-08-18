@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js assignment 1</title>
+    <script>
+        console.clear();
+
+// Question 1:
+// var str1 = 'Today is';
+// var str2 = '      a beautiful day     '
+// var str3 = ' In Hawaii.     '
+// Result = 'Today is a beautiful day In Hawaii.'
+// Use the str1, str2, str3 variables to create the Result string. Keep the extra spaces, lowercase and uppercase letters in mind.
+
+console.log("Q1 END =====================")
+
+// Question 2:
+// var enteredAlphabet = 'd' or "D"
+// Write a program to check vowel, consonant or non-alphabet using switch case. Change value of enteredAlphabet and check if your code works fine.
+
+console.log("Q2 END =====================")
+
+// Question 3:
+// Write a JavaScript program to create menu driven calculator that performs basic arithmetic operations (add, subtract, multiply and divide) using switch case. The calculator should input two numbers and an operator: +, -, *, / from the user. It should perform operation according to the operator entered and must take input in given format.
+
+
+console.log("Q3 END =====================")
+
+
+// Question 4:
+// Write a JavaScript program to input sides of a triangle and check whether a triangle is equilateral, scalene or isosceles triangle using if else.
+// Properties of triangle:
+// A triangle is said Equilateral Triangle, if all its sides are equal. If a, b, c are three sides of triangle. Then, the triangle is equilateral only if a == b == c.
+// A triangle is said Isosceles Triangle, if its two sides are equal. If a, b, c are three sides of triangle. Then, the triangle is isosceles if either a == b or a == c or b == c.
+// A triangle is said Scalene Triangle, if none of its sides are equal.
+
+
+console.log("Q4 END =====================")
+
+
+// Question 5:
+// Write a JavaScript program to input electricity unit charge and calculate the total electricity bill according to the given condition:
+// For first 50 units Rs. 0.50/unit
+// For next 100 units Rs. 0.75/unit
+// For next 100 units Rs. 1.20/unit
+// For unit above 250 Rs. 1.50/unit. An additional surcharge of 20% is added to the bill.
+// For example, input: 20 units then bill is Rs10
+// Total Units: 300
+// 50 * 0.5 = 25
+// 100 * 0.75 = 75
+// 100 * 1.2 = 120
+// 50 * 1.5 = 75
+// Total = 295 + 20% surcharge on 295
+// Result = INR 354
+
+console.log("Q5 END =====================")
+
+// Answer :: 
+
+// Question 1:
+// var str1 = 'Today is';
+// var str2 = '      a beautiful day     '
+// var str3 = ' In Hawaii.     '
+// Result = 'Today is a beautiful day In Hawaii.'
+// Use the str1, str2, str3 variables to create the Result string.
+// Keep the extra spaces, lowercase and uppercase letters in mind.
+
+// Answer:
+
+var str1 = 'Today is';
+var str2 = '      a beautiful day     ';
+var str3 = ' In Hawaii.     ';
+
+var result = str1 + str2.trim() + str3.trim();
+
+console.log(result);
+
+// Output:
+// Today isa beautiful dayIn Hawaii.
+//
+// The above result is missing spaces because str1 does not have a trailing
+// space and str2/str3 are trimmed.
+//
+// Correct approach:
+
+var result = str1 + " " + str2.trim() + str3.trim();
+
+console.log(result);
+
+// Output:
+// Today is a beautiful dayIn Hawaii.
+//
+// We still need a space between "day" and "In".
+// Therefore:
+
+var result = str1 + " " + str2.trim() + " " + str3.trim();
+
+console.log(result);
+
+// Output:
+// Today is a beautiful day In Hawaii.
+//
+// Reason:
+// trim() removes the extra spaces from the beginning and end of str2 and str3.
+// We manually add one space between each part.
+// The original uppercase/lowercase letters are preserved.
+
+console.log("Q1 END =====================");
+
+
+// Question 2:
+// var enteredAlphabet = 'd' or "D"
+// Write a program to check vowel, consonant or non-alphabet using switch case.
+// Change value of enteredAlphabet and check if your code works fine.
+
+// Answer:
+
+var enteredAlphabet = 'D';
+
+switch (enteredAlphabet.toLowerCase()) {
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+        console.log(enteredAlphabet + " is a vowel");
+        break;
+
+    case 'b':
+    case 'c':
+    case 'd':
+    case 'f':
+    case 'g':
+    case 'h':
+    case 'j':
+    case 'k':
+    case 'l':
+    case 'm':
+    case 'n':
+    case 'p':
+    case 'q':
+    case 'r':
+    case 's':
+    case 't':
+    case 'v':
+    case 'w':
+    case 'x':
+    case 'y':
+    case 'z':
+        console.log(enteredAlphabet + " is a consonant");
+        break;
+
+    default:
+        console.log(enteredAlphabet + " is not an alphabet");
+}
+
+// Output:
+// D is a consonant
+//
+// Reason:
+// toLowerCase() makes the comparison case-insensitive.
+// Therefore, both 'd' and 'D' are treated as the same alphabet.
+// The vowel cases are grouped together.
+// The consonant cases are also grouped together.
+// Any other input, such as '5', '@', or '#', reaches default.
+
+console.log("Q2 END =====================");
+
+
+// Question 3:
+// Write a JavaScript program to create menu driven calculator that performs basic
+// arithmetic operations (add, subtract, multiply and divide) using switch case.
+// The calculator should input two numbers and an operator: +, -, *, / from the user.
+// It should perform operation according to the operator entered and must take input
+// in given format.
+
+// Answer:
+
+var num1 = Number(prompt("Enter first number:"));
+var operator = prompt("Enter operator (+, -, *, /):");
+var num2 = Number(prompt("Enter second number:"));
+
+var result;
+
+switch (operator) {
+    case '+':
+        result = num1 + num2;
+        break;
+
+    case '-':
+        result = num1 - num2;
+        break;
+
+    case '*':
+        result = num1 * num2;
+        break;
+
+    case '/':
+        if (num2 === 0) {
+            result = "Cannot divide by zero";
+        } else {
+            result = num1 / num2;
+        }
+        break;
+
+    default:
+        result = "Invalid operator";
+}
+
+console.log("Result = " + result);
+
+// Example:
+// Input:
+// First number: 20
+// Operator: +
+// Second number: 10
+//
+// Output:
+// Result = 30
+//
+// Reason:
+// switch checks the operator entered by the user.
+// Based on the operator, the corresponding arithmetic operation is performed.
+// The division case also checks whether the second number is zero.
+
+console.log("Q3 END =====================");
+
+
+// Question 4:
+// Write a JavaScript program to input sides of a triangle and check whether a triangle
+// is equilateral, scalene or isosceles triangle using if else.
+
+// Answer:
+
+var side1 = Number(prompt("Enter side 1:"));
+var side2 = Number(prompt("Enter side 2:"));
+var side3 = Number(prompt("Enter side 3:"));
+
+if (side1 <= 0 || side2 <= 0 || side3 <= 0 ||
+    side1 + side2 <= side3 ||
+    side1 + side3 <= side2 ||
+    side2 + side3 <= side1) {
+
+    console.log("Invalid triangle");
+
+} else if (side1 === side2 && side2 === side3) {
+
+    console.log("Equilateral Triangle");
+
+} else if (side1 === side2 || side1 === side3 || side2 === side3) {
+
+    console.log("Isosceles Triangle");
+
+} else {
+
+    console.log("Scalene Triangle");
+}
+
+// Example 1:
+// Input:
+// 5, 5, 5
+//
+// Output:
+// Equilateral Triangle
+//
+// Example 2:
+// Input:
+// 5, 5, 8
+//
+// Output:
+// Isosceles Triangle
+//
+// Example 3:
+// Input:
+// 5, 6, 7
+//
+// Output:
+// Scalene Triangle
+//
+// Reason:
+// Equilateral → all three sides are equal.
+// Isosceles → exactly two sides are equal.
+// Scalene → all three sides are different.
+//
+// The triangle inequality condition is also checked to make sure
+// the given sides can actually form a triangle.
+
+console.log("Q4 END =====================");
+
+
+// Question 5:
+// Write a JavaScript program to input electricity unit charge and calculate the total
+// electricity bill according to the given condition:
+// For first 50 units Rs. 0.50/unit
+// For next 100 units Rs. 0.75/unit
+// For next 100 units Rs. 1.20/unit
+// For unit above 250 Rs. 1.50/unit.
+// An additional surcharge of 20% is added to the bill.
+//
+// Example:
+// Total Units: 300
+//
+// 50 * 0.5 = 25
+// 100 * 0.75 = 75
+// 100 * 1.2 = 120
+// 50 * 1.5 = 75
+//
+// Total = 295
+// 20% surcharge = 59
+// Final Result = INR 354
+
+// Answer:
+
+var units = Number(prompt("Enter electricity units:"));
+
+var bill = 0;
+
+if (units <= 50) {
+
+    bill = units * 0.50;
+
+} else if (units <= 150) {
+
+    bill = (50 * 0.50) +
+           ((units - 50) * 0.75);
+
+} else if (units <= 250) {
+
+    bill = (50 * 0.50) +
+           (100 * 0.75) +
+           ((units - 150) * 1.20);
+
+} else {
+
+    bill = (50 * 0.50) +
+           (100 * 0.75) +
+           (100 * 1.20) +
+           ((units - 250) * 1.50);
+}
+
+var surcharge = bill * 0.20;
+var totalBill = bill + surcharge;
+
+console.log("Electricity Bill = INR " + bill);
+console.log("Surcharge = INR " + surcharge);
+console.log("Total Electricity Bill = INR " + totalBill);
+
+// Example:
+// Input:
+// 300
+//
+// Calculation:
+// First 50 units  = 50 × 0.50 = 25
+// Next 100 units  = 100 × 0.75 = 75
+// Next 100 units  = 100 × 1.20 = 120
+// Remaining 50    = 50 × 1.50 = 75
+//
+// Bill = 25 + 75 + 120 + 75
+// Bill = 295
+//
+// Surcharge = 295 × 20 / 100
+// Surcharge = 59
+//
+// Final Bill = 295 + 59
+// Final Bill = INR 354
+//
+// Output:
+// Electricity Bill = INR 295
+// Surcharge = INR 59
+// Total Electricity Bill = INR 354
+//
+// Reason:
+// The bill is calculated progressively according to the unit slabs.
+// The 20% surcharge is calculated after the basic electricity bill
+// has been calculated.
+
+console.log("Q5 END =====================");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

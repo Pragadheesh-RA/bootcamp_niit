@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment operator</title>
+    <style>
+        .list-item {
+	font-size: 26px;
+	margin-top: 12px;
+}
+    </style>
+    <script>
+        console.clear()
+
+var num1 = 15;
+var num2 = 30;
+
+// =
+// num1 = 20;
+
+// +=
+// num1 += 10; // num1 = num1 + 10
+// num1 += num2 // num1 = num1 + num2
+// console.log(num1)
+
+// -=
+// num1 -= 10; //num1 = num1 - 10
+// num1 -= num2 //num1 = num1 - num2
+// console.log(num1)
+
+// *=
+// num1 *= 20 //num1 = num1 * 20
+// console.log(num1)
+
+// /=
+// num1 /= 10 //num1 = num1 / 10
+// console.log(num1)
+
+// %=
+num1 %= 10 //num1 = num1 % 10
+console.log(num1)
+
+// Answer the following questions WITHOUT executing the code in Codepen.
+// Also, explain why do you think your answer is correct.
+// Q1. With x = 0, which of the following statements will produce a value of 1?
+// a) x++;
+// b) x = x + 1;
+// c) x += 1;
+// Q2. With x = 1, which of the following statements will produce a value of 0?
+// a) x--;
+// b) x = x - 1;
+// c) x -= 1;
+// Q3. What will be the result of following statement?
+// var num = 100;
+// num += 5 * 10 / 2;
+
+
+// Q4. What will be the result of following statement?
+// var num = 100;
+// num *= 2 * 10 / 5;
+// Q5. What will be the result of following statement?
+// var num = 100;
+// num /= 2 * 8 - 15;
+
+
+// Answer the following questions WITHOUT executing the code in Codepen.
+// Also, explain why do you think your answer is correct.
+
+// Q1. With x = 0, which of the following statements will produce a value of 1?
+// a) x++;
+// b) x = x + 1;
+// c) x += 1;
+
+// Answer:
+// a) x++        → Value produced: 0, but x becomes 1
+// b) x = x + 1  → Value produced: 1
+// c) x += 1     → Value produced: 1
+//
+// Correct answer: b) and c)
+//
+// Reason:
+// x++ is the post-increment operator. It returns the current value (0) first
+// and then increases x to 1.
+// x = x + 1 and x += 1 increase x from 0 to 1 and produce the value 1.
+
+
+// Q2. With x = 1, which of the following statements will produce a value of 0?
+// a) x--;
+// b) x = x - 1;
+// c) x -= 1;
+
+// Answer:
+// a) x--        → Value produced: 1, but x becomes 0
+// b) x = x - 1  → Value produced: 0
+// c) x -= 1     → Value produced: 0
+//
+// Correct answer: b) and c)
+//
+// Reason:
+// x-- is the post-decrement operator. It returns the current value (1) first
+// and then decreases x to 0.
+// x = x - 1 and x -= 1 decrease x from 1 to 0 and produce the value 0.
+
+
+// Q3. What will be the result of following statement?
+// var num = 100;
+// num += 5 * 10 / 2;
+
+// Answer: 125
+//
+// Reason:
+// Multiplication and division are performed before addition.
+// 5 * 10 = 50
+// 50 / 2 = 25
+// num += 25 means num = num + 25
+// num = 100 + 25 = 125
+
+
+// Q4. What will be the result of following statement?
+// var num = 100;
+// num *= 2 * 10 / 5;
+
+// Answer: 400
+//
+// Reason:
+// Multiplication and division are performed first.
+// 2 * 10 = 20
+// 20 / 5 = 4
+// num *= 4 means num = num * 4
+// num = 100 * 4 = 400
+
+
+// Q5. What will be the result of following statement?
+// var num = 100;
+// num /= 2 * 8 - 15;
+
+// Answer: 100
+//
+// Reason:
+// Multiplication is performed first:
+// 2 * 8 = 16
+//
+// Then subtraction:
+// 16 - 15 = 1
+//
+// num /= 1 means:
+// num = 100 / 1
+//
+// Therefore, num = 100.
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <h1>Assignment Operators</h1>
+<ul>
+	<li class='list-item'>=</li>
+	<li class='list-item'>+=</li>
+	<li class='list-item'>-=</li>
+	<li class='list-item'>*=</li>
+	<li class='list-item'>/=</li>
+	<li class='list-item'>%=</li>
+</ul>
+    
+</body>
+</html>

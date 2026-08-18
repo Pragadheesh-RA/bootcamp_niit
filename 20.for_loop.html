@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for - loop </title>
+    <script>
+
+console.clear()
+
+var mList = [1, 2, 3, 4, 5]
+// var pos;
+// for(pos = 0; pos < mList.length; pos++) {
+// 	console.log('Position => ' + pos + ' Value => ' + mList[pos])
+// }
+
+
+// Break Keyword
+
+// var pos;
+// for(pos = 0; pos < mList.length; pos++) {
+// 	if(pos >= 3) break
+// 	console.log('Position => ' + pos + ' Value => ' + mList[pos])
+// }
+
+// Continue Keyword
+
+var pos;
+for(pos = 0; pos < mList.length; pos++) {
+	if(pos % 2 === 0) continue
+	console.log('Position => ' + pos + ' Value => ' + mList[pos])
+}
+
+// Answer the following questions and run the code in Codepen.
+// Q1. Write a JavaScript program to encode a message in the language which hackers use to communicate.
+// Example
+// Hackers write "javascript is cool" as "j4v45cr1pt 15 c00l"
+// Instructions:
+// The program should replace all 'a' with '4', 'e' with '3', 'i' with '1', 'o' with '0' and 's' with '5'.
+// String to convert:
+// 'Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence. '
+
+
+// Q2. Write a JavaScript program to find how many vowels are there in the sentence.
+// Sentence:
+// Good, better, best. Never let it rest. 'Til your good is better and your better is
+// best.
+// Output:
+// Number of vowels = 25
+
+
+
+// Q3. Write a JavaScript program which accepts a string as input and swap the case of
+// each character.
+// [ Hint: You can create two string variables of all alphabets in lowercase(a-z) and in upper
+// case(A-Z). ]
+// Sample Data
+// Input:
+// 'The Quick Brown Fox'
+// Output:
+// 'tHE qUICK bROWN fOX'
+
+
+// Q4. Write a JavaScript for loop that will iterate from 0 to 10. For each iteration, it will check if the current number is odd or even, and display a message to the screen.
+// Output:
+// "0 is even" 
+// "1 is odd" 
+// "2 is even" 
+// ---------- 
+// ----------
+
+// Q5. Write a JavaScript function that will reverse all the words which are of odd length.
+// The even length words are not changed.
+// Sample Data
+// Input:
+// ‘There is exactly one space between each word and no punctuation is used.’
+// Output:
+// "erehT is yltcaxe eno ecaps neewteb each word dna no noitautcnup is used“
+
+// Answer the following questions and run the code in Codepen.
+
+// Q1. Write a JavaScript program to encode a message in the language which hackers use to communicate.
+// Example:
+// Hackers write "javascript is cool" as "j4v45cr1pt 15 c00l"
+// Instructions:
+// The program should replace all 'a' with '4', 'e' with '3', 'i' with '1', 'o' with '0' and 's' with '5'.
+// String to convert:
+// 'Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.'
+
+// Answer:
+
+var message = "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.";
+
+var hackerMessage = message
+    .replace(/a/g, "4")
+    .replace(/e/g, "3")
+    .replace(/i/g, "1")
+    .replace(/o/g, "0")
+    .replace(/s/g, "5");
+
+console.log(hackerMessage);
+
+// Output:
+// 0pt1m15m 15 th3 f41th th4t l34d5 t0 4ch13v3m3nt. N0th1ng c4n b3 d0n3 w1th0ut h0p3 4nd c0nf1d3nc3.
+//
+// Reason:
+// replace() with a regular expression and the g flag replaces every occurrence
+// of the specified character in the string.
+// a → 4
+// e → 3
+// i → 1
+// o → 0
+// s → 5
+
+
+// Q2. Write a JavaScript program to find how many vowels are there in the sentence.
+// Sentence:
+// Good, better, best. Never let it rest. 'Til your good is better and your better is
+// best.
+// Output:
+// Number of vowels = 25
+
+// Answer:
+
+var sentence = "Good, better, best. Never let it rest. 'Til your good is better and your better is best.";
+
+var vowelCount = 0;
+
+for (var i = 0; i < sentence.length; i++) {
+    var ch = sentence[i].toLowerCase();
+
+    if (ch === "a" || ch === "e" || ch === "i" || ch === "o" || ch === "u") {
+        vowelCount++;
+    }
+}
+
+console.log("Number of vowels = " + vowelCount);
+
+// Output:
+// Number of vowels = 25
+//
+// Reason:
+// The loop checks every character in the sentence.
+// If the character is a, e, i, o, or u, the vowelCount is increased by 1.
+// Spaces, punctuation marks, and consonants are ignored.
+
+
+// Q3. Write a JavaScript program which accepts a string as input and swap the case of
+// each character.
+// [ Hint: You can create two string variables of all alphabets in lowercase(a-z) and in upper
+// case(A-Z). ]
+// Sample Data:
+// Input:
+// 'The Quick Brown Fox'
+// Output:
+// 'tHE qUICK bROWN fOX'
+
+// Answer:
+
+var input = "The Quick Brown Fox";
+var output = "";
+
+for (var i = 0; i < input.length; i++) {
+    var ch = input[i];
+
+    if (ch >= "a" && ch <= "z") {
+        output += ch.toUpperCase();
+    } else if (ch >= "A" && ch <= "Z") {
+        output += ch.toLowerCase();
+    } else {
+        output += ch;
+    }
+}
+
+console.log(output);
+
+// Output:
+// tHE qUICK bROWN fOX
+//
+// Reason:
+// Each character is checked to determine whether it is uppercase or lowercase.
+// Lowercase characters are converted to uppercase.
+// Uppercase characters are converted to lowercase.
+// Spaces and other characters remain unchanged.
+
+
+// Q4. Write a JavaScript for loop that will iterate from 0 to 10.
+// For each iteration, it will check if the current number is odd or even,
+// and display a message to the screen.
+// Output:
+// "0 is even"
+// "1 is odd"
+// "2 is even"
+// ----------
+// ----------
+
+// Answer:
+
+for (var i = 0; i <= 10; i++) {
+    if (i % 2 === 0) {
+        console.log(i + " is even");
+    } else {
+        console.log(i + " is odd");
+    }
+}
+
+// Output:
+// 0 is even
+// 1 is odd
+// 2 is even
+// 3 is odd
+// 4 is even
+// 5 is odd
+// 6 is even
+// 7 is odd
+// 8 is even
+// 9 is odd
+// 10 is even
+//
+// Reason:
+// The modulus operator (%) gives the remainder after division by 2.
+// If the remainder is 0, the number is even.
+// Otherwise, the number is odd.
+
+
+// Q5. Write a JavaScript function that will reverse all the words which are of odd length.
+// The even length words are not changed.
+// Sample Data:
+// Input:
+// "There is exactly one space between each word and no punctuation is used."
+// Output:
+// "erehT is yltcaxe eno ecaps neewteb each word dna no noitautcnup is used"
+
+// Answer:
+
+function reverseOddLengthWords(sentence) {
+    var words = sentence.split(" ");
+
+    for (var i = 0; i < words.length; i++) {
+        if (words[i].length % 2 !== 0) {
+            words[i] = words[i].split("").reverse().join("");
+        }
+    }
+
+    return words.join(" ");
+}
+
+var sentence = "There is exactly one space between each word and no punctuation is used.";
+
+console.log(reverseOddLengthWords(sentence));
+
+// Output:
+// erehT is yltcaxe eno ecaps neewteb each word dna no noitautcnup is used
+//
+// Reason:
+// split(" ") separates the sentence into individual words.
+// The length of each word is checked using % 2.
+// If the length is odd, the word is reversed using:
+// split("") → reverse() → join("")
+//
+// Even-length words are left unchanged.
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

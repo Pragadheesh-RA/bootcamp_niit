@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while loop</title>
+    <script>
+
+console.clear()
+
+// while(condition) {
+// 	// block of code
+// }
+
+var mValue = 0
+while(mValue < 50) {
+	mValue++
+}
+
+console.log(mValue);
+
+
+
+
+// Q1. Write a JavaScript program to find the GCD of two numbers : 15 and 25.
+// [ The GCD or Greatest Common Divisor of two integers is the largest integer that divides each of the integers such that their remainder is zero.]
+// Sample Data
+// Input:
+// num1 = 15;
+// num2 = 25;
+// Output:
+// 5
+
+
+// Q2. Write a JavaScript program to print the LCM of two numbers: 15 and 20?
+// [A common multiple is a number that is a multiple of two or more integers. e.g. The
+// common multiples of 3 and 4 are 0, 12, 24, .... The least common multiple (LCM) of two
+// numbers is the smallest number (not zero) that is a multiple of both.]
+// Sample Data
+// Input:
+// n1 = 5;
+// n2 = 18;
+// Output:
+// 90
+
+
+
+// Q3. Write a JavaScript program to find the number of even values in sequence before
+// the first occurrence of a given number. [Hint: You can use while loop here]
+// Sample Data
+// Input:
+// Array: [1,2,3,4,5,6,7,8,9,10,11,12]
+// Number: 8
+// Output:
+// 3
+
+
+// Q4. Write a JavaScript program to sum the multiples of 3 and 5 under 1000.
+// Sample Data
+// Input:
+// Numbers from 0 to 1000
+// Output:
+// 233168
+
+
+// Q5. Write a JavaScript program which iterates the integers from 1 to 15. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+// Sample Data
+// Input:
+// Numbers from 0 to 15
+// Output:
+// 1
+// 2
+// 3 Fizz
+// 4
+// 5 Buzz
+// ...
+
+// Q1. Write a JavaScript program to find the GCD of two numbers : 15 and 25.
+// [ The GCD or Greatest Common Divisor of two integers is the largest integer that divides each of the integers such that their remainder is zero.]
+// Sample Data
+// Input:
+// num1 = 15;
+// num2 = 25;
+// Output:
+// 5
+
+// Answer:
+
+var num1 = 15;
+var num2 = 25;
+
+var a = num1;
+var b = num2;
+
+while (b !== 0) {
+    var remainder = a % b;
+    a = b;
+    b = remainder;
+}
+
+console.log(a);
+
+// Output:
+// 5
+//
+// Reason:
+// Using the Euclidean algorithm:
+// 25 % 15 = 10
+// 15 % 10 = 5
+// 10 % 5 = 0
+//
+// When the remainder becomes 0, the value of a is the GCD.
+// Therefore, GCD(15, 25) = 5.
+
+
+// Q2. Write a JavaScript program to print the LCM of two numbers: 15 and 20?
+// [A common multiple is a number that is a multiple of two or more integers. e.g. The
+// common multiples of 3 and 4 are 0, 12, 24, .... The least common multiple (LCM) of two
+// numbers is the smallest number (not zero) that is a multiple of both.]
+// Sample Data
+// Input:
+// n1 = 5;
+// n2 = 18;
+// Output:
+// 90
+
+// Answer:
+
+var n1 = 5;
+var n2 = 18;
+
+var a = n1;
+var b = n2;
+
+while (b !== 0) {
+    var remainder = a % b;
+    a = b;
+    b = remainder;
+}
+
+var gcd = a;
+var lcm = Math.abs(n1 * n2) / gcd;
+
+console.log(lcm);
+
+// Output:
+// 90
+//
+// Reason:
+// First, we find the GCD of 5 and 18:
+// GCD = 1
+//
+// LCM formula:
+// LCM = |n1 × n2| / GCD
+//     = |5 × 18| / 1
+//     = 90
+//
+// Therefore, LCM(5, 18) = 90.
+
+
+// Q3. Write a JavaScript program to find the number of even values in sequence before
+// the first occurrence of a given number. [Hint: You can use while loop here]
+// Sample Data
+// Input:
+// Array: [1,2,3,4,5,6,7,8,9,10,11,12]
+// Number: 8
+// Output:
+// 3
+
+// Answer:
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+var givenNumber = 8;
+
+var i = 0;
+var evenCount = 0;
+
+while (i < arr.length && arr[i] !== givenNumber) {
+    if (arr[i] % 2 === 0) {
+        evenCount++;
+    }
+
+    i++;
+}
+
+console.log(evenCount);
+
+// Output:
+// 3
+//
+// Reason:
+// We check the elements until the first occurrence of 8:
+// 1 → odd
+// 2 → even (1)
+// 3 → odd
+// 4 → even (2)
+// 5 → odd
+// 6 → even (3)
+// 7 → odd
+// 8 → stop
+//
+// Therefore, there are 3 even values before 8.
+
+
+// Q4. Write a JavaScript program to sum the multiples of 3 and 5 under 1000.
+// Sample Data
+// Input:
+// Numbers from 0 to 1000
+// Output:
+// 233168
+
+// Answer:
+
+var sum = 0;
+
+for (var i = 0; i < 1000; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+        sum += i;
+    }
+}
+
+console.log(sum);
+
+// Output:
+// 233168
+//
+// Reason:
+// The loop checks every number from 0 to 999.
+// If a number is divisible by 3 or 5, it is added to the sum.
+// Numbers divisible by both 3 and 5 are added only once because of the || condition.
+//
+// Therefore, the sum is 233168.
+
+
+// Q5. Write a JavaScript program which iterates the integers from 1 to 15.
+// But for multiples of three print "Fizz" instead of the number and for the multiples
+// of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+// Sample Data
+// Input:
+// Numbers from 0 to 15
+// Output:
+// 1
+// 2
+// 3 Fizz
+// 4
+// 5 Buzz
+// ...
+
+// Answer:
+
+for (var i = 1; i <= 15; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+        console.log("Fizz");
+    } else if (i % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+}
+
+// Output:
+// 1
+// 2
+// Fizz
+// 4
+// Buzz
+// Fizz
+// 7
+// 8
+// Fizz
+// Buzz
+// 11
+// Fizz
+// 13
+// 14
+// FizzBuzz
+//
+// Reason:
+// The program checks multiples of both 3 and 5 first.
+// This is important because numbers like 15 satisfy both conditions.
+// Then it checks multiples of 3, followed by multiples of 5.
+// If neither condition is true, the number itself is printed.
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

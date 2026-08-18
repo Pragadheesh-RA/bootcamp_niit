@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>implicit coercion</title>
+    <script>
+console.clear();
+
+// var mStr = 'Hello'
+// var mNum = 5
+// var mSum = mStr + mNum
+
+// console.log(mSum);
+// console.log(typeof(mSum));
+
+// console.log('hola' + true);
+// console.log(typeof('hola' + true))
+
+// console.log(null + 'hola');
+// console.log(typeof(null + 'hola'))
+
+// console.log(50 + 'hola');
+// console.log(typeof(50 + 'hola'))
+
+
+if('Rocket' + 10) {
+	console.log('True')
+} else {
+	console.log('False')
+}
+
+
+// Answer the following questions WITHOUT executing the code in Codepen.
+// Also, explain why do you think your answer is correct.
+// Q1. What will be printed in the console?
+// 1. console.log(true + false)
+// 2. console.log(12 / "6")
+// 3. console.log("number" + 15 + 3)
+// 4. console.log(15 + 3 + "number")
+// 5. console.log(1 > null)
+// 6. console.log("foo" + + "bar")
+// 7. console.log('true' == true)
+// 8. console.log(false == 'false')
+// 9. console.log(null == '')
+// 10. console.log(!!"false" == !!"true")
+
+// Answer the following questions WITHOUT executing the code in Codepen.
+// Also, explain why do you think your answer is correct.
+
+// Q1. What will be printed in the console?
+
+// 1. console.log(true + false)
+//    Answer: 1
+//    Reason: In arithmetic operations, true is converted to 1 and false is converted to 0.
+//    Therefore, 1 + 0 = 1.
+
+
+// 2. console.log(12 / "6")
+//    Answer: 2
+//    Reason: The / operator converts the string "6" into the number 6.
+//    Therefore, 12 / 6 = 2.
+
+
+// 3. console.log("number" + 15 + 3)
+//    Answer: "number153"
+//    Reason: Since the first operand is a string, + performs string concatenation.
+//    "number" + 15 = "number15"
+//    "number15" + 3 = "number153"
+
+
+// 4. console.log(15 + 3 + "number")
+//    Answer: "18number"
+//    Reason: JavaScript evaluates from left to right.
+//    15 + 3 = 18
+//    Then 18 + "number" performs string concatenation.
+//    Therefore, the result is "18number".
+
+
+// 5. console.log(1 > null)
+//    Answer: true
+//    Reason: For relational comparison, null is converted to 0.
+//    Therefore, 1 > 0 is true.
+
+
+// 6. console.log("foo" + + "bar")
+//    Answer: "fooNaN"
+//    Reason: The second + is a unary plus operator.
+//    It attempts to convert "bar" into a number, but "bar" cannot be converted,
+//    resulting in NaN.
+//    Therefore, "foo" + NaN = "fooNaN".
+
+
+// 7. console.log('true' == true)
+//    Answer: false
+//    Reason: With ==, JavaScript converts the string "true" to a number.
+//    Number("true") results in NaN.
+//    NaN is not equal to true (which becomes 1), so the result is false.
+
+
+// 8. console.log(false == 'false')
+//    Answer: false
+//    Reason: With ==, false is converted to 0 and the string "false" is converted
+//    to a number, which results in NaN.
+//    0 == NaN is false.
+
+
+// 9. console.log(null == '')
+//    Answer: false
+//    Reason: null is only loosely equal to undefined.
+//    It is not loosely equal to an empty string.
+//    Therefore, null == '' is false.
+
+
+// 10. console.log(!!"false" == !!"true")
+//     Answer: true
+//     Reason: Both "false" and "true" are non-empty strings, so both are truthy.
+//     !! converts each value to the boolean true.
+//     Therefore:
+//     true == true → true.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

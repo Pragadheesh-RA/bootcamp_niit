@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope</title>
+
+    <script>
+        // scope is a whole program 
+        
+        var num1=10;  // global variable 
+
+        function sum(num2){ 
+            var total = num1 +num2;  // total is a local variable 
+                                    // local scope of num1
+            console.log(total)
+
+
+
+        }
+
+        console.log(num1)
+
+        console.clear();
+
+// var num1 = 10;
+
+// console.log(num1);
+// console.log(num2);
+
+// function sum(num2) {
+//   console.log(num1);
+// 	console.log(num1 + num2);
+// }
+
+// console.log(num1);
+
+// sum(20)
+
+// console.log(num1);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
