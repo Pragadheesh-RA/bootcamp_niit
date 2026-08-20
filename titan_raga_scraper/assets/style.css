@@ -1,0 +1,12 @@
+/* Optional extra styling.
+   The main application already contains the required UI CSS.
+   Keep this file for future theme customization. */
+
+:root {
+    --raga-bg: #f7f7f8;
+    --raga-border: #e5e7eb;
+}
+
+.stApp {
+    background: var(--raga-bg);
+}
